@@ -1,0 +1,9 @@
+{% block body %}
+<ul>
+  {% for i in choice %}
+    <li>
+      {{ i.choice_text }} -- {{ i.votes }} votes {{ i.votes|pluralize }}
+    </li>
+  {% endfor %}
+</ul>
+{% endblock %}

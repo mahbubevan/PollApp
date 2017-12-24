@@ -9,12 +9,3 @@
       <p> No Polls are available</p>
 
 {% endif %}
-
-
-<ul>
-  {% for i in result %}
-    <li>
-      {{ i.choice_text }} -- {{ i.votes }} votes {{ i.pub_date }}
-    </li>
-  {% endfor %}
-</ul>

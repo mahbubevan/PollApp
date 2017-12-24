@@ -17,6 +17,7 @@ class ResultsView(generic.DetailView):
 
 def vote(request,question_id):
     question = get_object_or_404(Question,pk=question_id)
+    result = Choice.objects.all()
     context = {
         'question':question,
         'error_message':"You didn't select a choice.",
@@ -38,3 +39,12 @@ class IndexView(generic.ListView):
 
     def get_queryset(self):
         return Question.objects.order_by('-pub_date')
+
+
+def result(request):
+    choice = Choice.objects.all()
+    context = {
+        'choice':choice,
+    }
+
+    return render(request,'polls/base.html',context)
