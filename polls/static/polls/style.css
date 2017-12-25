@@ -2,6 +2,6 @@ li {
   color:green;
 }
 
-body {
-  color: red;
+body{
+  background: white url("images/large.jpg") no-repeat right bottom;
 }
