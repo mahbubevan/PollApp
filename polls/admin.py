@@ -17,4 +17,17 @@ class QuestionAdmin(admin.ModelAdmin):
     search_fields = ['question_text']
 
 
+
+class ChoiceAdmin(admin.ModelAdmin):
+    search_fields = ['choice_text','votes']
+    list_display = ('choice_text','votes')
+
+    fieldsets = [
+        ('Select Question',{'fields':['question']}),
+        ('Add Choice Here',{'fields':['choice_text']}),
+    ]
+
+
+
 admin.site.register(Question,QuestionAdmin)
+admin.site.register(Choice,ChoiceAdmin)
